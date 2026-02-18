@@ -6,40 +6,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Fuente Google: Quicksand -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
 
+    <!-- Hoja de estilos principal -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Icono de la pestaña -->
     <link rel="icon" type="image/svg" href="./logos/favicon.svg">
 
-    <title>Login</title>
+    <title>Log in</title>
 </head>
 
 <body>
+    <!-- Contenedor principal del formulario de login -->
     <main class="login">
         <div class="login-container">
+            <!-- Logo de la aplicación -->
             <img src="./logos/logo.svg" alt="Logo Yard Sale" class="logo">
 
+            <!-- Welcome title and subtitle -->
             <h1 class="title">Welcome back!</h1>
-            <p class="subtitle">Sign in to continue</p>
+            <p class="subtitle">Log in to continue</p>
 
+            <!-- Formulario de inicio de sesión -->
             <form class="form" action="#">
+                <!-- Field: Email address -->
                 <div class="form-group">
                     <label for="email">Email address</label>
                     <input type="email" id="email" name="email" placeholder="example@email.com">
                 </div>
 
+                <!-- Field: Password -->
                 <div class="form-group">
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" placeholder="*********">
                 </div>
 
-                <button type="submit" class="primary-button">Login</button>
+                <!-- Submit button -->
+                <button type="submit" class="primary-button">Log in</button>
 
+                <!-- Link to recover password -->
                 <a href="password.html" class="forgot-link">Forgot my password</a>
             </form>
 
+            <!-- Link to sign up -->
             <a href="signup.html" class="secondary-button">Sign up</a>
         </div>
     </main>

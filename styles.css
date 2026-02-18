@@ -1,218 +1,222 @@
+/* =============================================
+   VARIABLES GLOBALES
+   Definición de colores, tamaños de fuente,
+   espaciados y dimensiones de tarjetas.
+   ============================================= */
 :root {
+    /* Colores principales */
     --red: #E5252E;
     --white: #FFFFFF;
     --black: #000000;
     --silver: #C7C7C7;
     --very-light-gray: #F7F7F7;
+    --seasalt: #F7F7F7;
 
-    --font-size-sm: 0.875rem;
-    --font-size-md: 1rem;
-    --font-size-lg: 1.25rem;
-    --font-size-xl: 1.5rem;
-    --font-size-2xl: 2rem;
+    /* Tamaños de fuente */
+    --font-size-sm: 14px;
+    --font-size-md: 16px;
+    --font-size-lg: 18px;
+    --font-size-xl: 1.75rem;
+    --font-size-2xl: 2.25rem;
 
+    /* Espaciado */
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
     --spacing-md: 1rem;
     --spacing-lg: 1.5rem;
     --spacing-xl: 2rem;
+
+    /* Tamaño de tarjetas de producto */
+    --card-size: 240px;
+    --card-size-mobile: 140px;
+
+    /* Bordes redondeados y sombras */
+    --border-radius: 20px;
+    --shadow-subtle: 0 6px 24px rgba(0, 0, 0, 0.1);
 }
 
+/* =============================================
+   ESTILOS BASE / RESET
+   Elimina margenes y paddings por defecto.
+   ============================================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    font-size: 16px;
-}
-
 body {
     font-family: 'Quicksand', sans-serif;
     background-color: var(--white);
     color: var(--black);
-    min-height: 100vh;
 }
 
-.login {
+/* =============================================
+   TALLER 2 - GRILLA DE PRODUCTOS
+   Contenedor principal con CSS Grid para
+   mostrar las tarjetas de producto.
+   ============================================= */
+.cards-container {
     display: grid;
-    width: 100%;
-    min-height: 100vh;
-    place-items: center;
-    padding: var(--spacing-lg);
+    grid-template-columns: repeat(auto-fill, var(--card-size));
+    gap: 26px;
+    justify-content: center;
+    padding: 20px;
 }
 
-.login-container {
-    display: grid;
-    gap: var(--spacing-md);
-    max-width: 320px;
-    width: 100%;
+/* Tarjeta individual de producto */
+.product-card {
+    width: var(--card-size);
+    transition: transform 0.3s ease;
 }
 
-.logo {
-    display: block;
+/* Efecto hover: la tarjeta se eleva al pasar el ratón */
+.product-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Imagen del producto con bordes redondeados y sombra */
+.product-card img {
+    width: 100%;
+    height: var(--card-size);
+    border-radius: var(--border-radius);
+    object-fit: cover;
+    box-shadow: var(--shadow-subtle);
+}
+
+/* Información del producto (precio y nombre) */
+.product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+}
+
+/* Precio del producto (negrita) */
+.product-info div p:nth-child(1) {
+    font-weight: bold;
+    font-size: var(--font-size-lg);
+    margin-bottom: 6px;
+}
+
+/* Nombre del producto (color gris) */
+.product-info div p:nth-child(2) {
+    font-size: var(--font-size-md);
+    color: var(--silver);
+}
+
+/* Icono de agregar al carrito */
+.product-info figure img {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
+/* =============================================
+   TALLER 2 - MENÚ ESCRITORIO (Reglas: 5)
+   ============================================= */
+.desktop-menu {
     width: 150px;
-    margin: 0 auto var(--spacing-md);
-}
-
-.title {
-    font-size: var(--font-size-xl);
-    font-weight: 700;
-    color: var(--black);
-    text-align: center;
-}
-
-.subtitle {
-    font-size: var(--font-size-md);
-    font-weight: 300;
-    color: var(--silver);
-    text-align: center;
-    margin-bottom: var(--spacing-md);
-}
-
-.form {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
-}
-
-.form label {
-    font-size: var(--font-size-sm);
-    font-weight: 500;
-    color: var(--black);
-    margin-bottom: var(--spacing-xs);
-}
-
-.form input[type="text"],
-.form input[type="password"],
-.form input[type="email"] {
-    width: 100%;
-    padding: var(--spacing-sm) var(--spacing-md);
-    font-size: var(--font-size-md);
-    font-family: 'Quicksand', sans-serif;
     border: 1px solid var(--silver);
-    border-radius: 8px;
-    background-color: var(--very-light-gray);
-    outline: none;
-    transition: border-color 0.2s ease;
+    border-radius: 6px;
+    padding: 28px 28px 28px 3px;
+    box-shadow: var(--shadow-subtle);
+    color: var(--black);
+    margin-left: 10px;
 }
 
-.form input:focus {
-    border-color: var(--red);
+.desktop-menu :is(ul, li) {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: end;
 }
 
-.primary-button {
-    width: 100%;
-    padding: var(--spacing-sm) var(--spacing-md);
+.desktop-menu li:not(:last-child) {
+    margin-bottom: 24px;
+}
+
+.desktop-menu a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
     font-size: var(--font-size-md);
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700;
-    color: var(--white);
-    background-color: var(--red);
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: opacity 0.2s ease;
 }
 
-.primary-button:hover {
-    opacity: 0.9;
+.desktop-menu li:last-child {
+    border-top: 1px solid var(--silver);
+    padding-top: 24px;
+    color: var(--red);
+    margin-left: 15px;
 }
 
+/* Botón secundario (tipo ghost) */
 .secondary-button {
-    width: 100%;
-    padding: var(--spacing-sm) var(--spacing-md);
-    font-size: var(--font-size-md);
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700;
-    color: var(--red);
     background-color: var(--white);
-    border: 2px solid var(--red);
     border-radius: 8px;
+    border: 1px solid var(--red);
+    color: var(--red);
+    width: 100%;
     cursor: pointer;
-    transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.secondary-button:hover {
-    background-color: var(--red);
-    color: var(--white);
-}
-
-.email-icon {
-    width: 120px;
-    margin: var(--spacing-lg) auto;
-}
-
-.resend-text {
-    font-size: var(--font-size-sm);
-    color: var(--silver);
-    text-align: center;
-    margin-top: var(--spacing-md);
-}
-
-.resend-text a {
-    color: var(--red);
-    font-weight: 500;
-    text-decoration: underline;
-}
-
-.forgot-link {
-    font-size: var(--font-size-sm);
-    color: var(--red);
-    text-align: center;
-    text-decoration: underline;
-    display: block;
-}
-
-.login-link {
-    font-size: var(--font-size-sm);
-    color: var(--silver);
-    text-align: center;
-    margin-top: var(--spacing-md);
-}
-
-.login-link a {
-    color: var(--red);
-    font-weight: 500;
-    text-decoration: underline;
-}
-
-.user-info {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
-    margin-bottom: var(--spacing-lg);
-}
-
-.info-group {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xs);
-}
-
-.info-label {
-    font-size: var(--font-size-sm);
-    font-weight: 500;
-    color: var(--black);
-}
-
-.info-value {
     font-size: var(--font-size-md);
-    color: var(--silver);
-    padding: var(--spacing-sm) var(--spacing-md);
-    background-color: var(--very-light-gray);
-    border-radius: 8px;
-    border: 1px solid var(--silver);
-}
-
-.logout-button {
+    font-weight: bold;
+    height: 50px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
 }
 
+/* Regla específica para el logo en password.html (ocultar en escritorio) */
+.logo-password {
+    display: none;
+}
+
+/* TALLER 2 - MENÚ MÓVIL (Reglas: 6) */
+.mobile-menu {
+    padding: 28px;
+    width: 100%;
+    color: var(--black);
+}
+
+.mobile-menu :is(ul, li) {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 28px 0;
+}
+
+.mobile-menu ul:nth-child(1) {
+    border-bottom: 1px solid var(--silver);
+}
+
+.mobile-menu a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+    font-size: var(--font-size-md);
+}
+
+.mobile-menu .sign-out {
+    color: var(--red);
+}
+
+.mobile-menu .email {
+    font-size: var(--font-size-sm);
+    font-weight: 300;
+}
+
+/* =============================================
+   RESPONSIVE - DISPOSITIVOS MÓVILES
+   Ajustes para pantallas menores a 640px.
+   ============================================= */
 @media (max-width: 640px) {
-    .logo {
-        display: block;
+    :root {
+        --card-size: var(--card-size-mobile);
+    }
+
+    .cards-container {
+        gap: 12px;
+        padding: 10px;
     }
 }

@@ -6,49 +6,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Fuente Google: Quicksand -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
 
+    <!-- Hoja de estilos principal -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Icono de la pestaña -->
     <link rel="icon" type="image/svg" href="./logos/favicon.svg">
 
-    <title>Sign Up</title>
+    <title>Sign up</title>
 </head>
 
 <body>
+    <!-- Contenedor principal del formulario de registro -->
     <main class="login">
         <div class="login-container signup-container">
+            <!-- Logo de la aplicación -->
             <img src="./logos/logo.svg" alt="Logo Yard Sale" class="logo">
 
+            <!-- Title and subtitle -->
             <h1 class="title">Create your account</h1>
             <p class="subtitle">Join us and start shopping</p>
 
+            <!-- Formulario de registro -->
             <form class="form" action="#">
+                <!-- Field: Full name -->
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" placeholder="Your name">
                 </div>
 
+                <!-- Field: Email address -->
                 <div class="form-group">
                     <label for="email">Email address</label>
                     <input type="email" id="email" name="email" placeholder="example@email.com">
                 </div>
 
+                <!-- Field: Password -->
                 <div class="form-group">
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" placeholder="*********">
                 </div>
 
+                <!-- Field: Confirm password -->
                 <div class="form-group">
                     <label for="confirm-password">Confirm password</label>
                     <input type="password" id="confirm-password" name="confirm-password" placeholder="*********">
                 </div>
 
+                <!-- Submit button -->
                 <button type="submit" class="primary-button">Sign up</button>
             </form>
 
-            <p class="login-link">Already have an account? <a href="login.html">Login</a></p>
+            <!-- Link to go to login if already has account -->
+            <p class="login-link">Already have an account? <a href="login.html">Log in</a></p>
         </div>
     </main>
 </body>

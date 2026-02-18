@@ -6,28 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Fuente Google: Quicksand -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
 
+    <!-- Hoja de estilos principal -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Icono de la pestaña -->
     <link rel="icon" type="image/svg" href="./logos/favicon.svg">
 
     <title>Email Sent</title>
 </head>
 
 <body>
+    <!-- Contenedor principal de confirmación de email -->
     <main class="login">
         <div class="login-container">
+            <!-- Logo de la aplicación -->
             <img src="./logos/logo.svg" alt="Logo Yard Sale" class="logo">
 
+            <!-- Confirmation message -->
             <h1 class="title">Email has been sent!</h1>
-            <p class="subtitle">Please check your inbox for instructions on how to reset your password</p>
+            <p class="subtitle">Please check your inbox for password recovery instructions</p>
 
+            <!-- Email icon -->
             <img src="./icons/email.svg" alt="Email Icon" class="email-icon">
 
-            <a href="login.html" class="primary-button" style="text-align: center; text-decoration: none;">Login</a>
+            <!-- Button to go back to login -->
+            <a href="login.html" class="primary-button" style="text-align: center; text-decoration: none;">Log in</a>
 
+            <!-- Link to resend the email -->
             <p class="resend-text">Didn't receive the email? <a href="#">Resend</a></p>
         </div>
     </main>
